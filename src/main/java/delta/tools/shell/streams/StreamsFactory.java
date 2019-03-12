@@ -12,12 +12,18 @@ import org.apache.log4j.Logger;
 import delta.tools.shell.utils.JUnixLoggers;
 
 /**
+ * Factory methods to build streams.
  * @author DAM
  */
 public class StreamsFactory
 {
   private static final Logger _logger=JUnixLoggers.getJUnixLogger();
 
+  /**
+   * Build a file input stream.
+   * @param path File to read from.
+   * @return A new stream or <code>null</code> if file does not exist.
+   */
   public InputStream getFileInputStream(File path)
   {
     FileInputStream ret=null;
@@ -32,12 +38,21 @@ public class StreamsFactory
     return ret;
   }
 
+  /**
+   * Build a '/dev/null' output stream.
+   * @return A new output stream.
+   */
   public OutputStream getDevNullOutputStream()
   {
     OutputStream ret=new DevNullOutputStream();
     return ret;
   }
 
+  /**
+   * Build a file output stream.
+   * @param path File to write to.
+   * @return A new output stream.
+   */
   public OutputStream getFileOutputStream(File path)
   {
     FileOutputStream ret=null;
@@ -52,8 +67,12 @@ public class StreamsFactory
     return ret;
   }
 
+  /**
+   * Release the specified stream.
+   * @param is
+   */
   public void release(InputStream is)
   {
-    // Nothing to do ?
+    // Nothing to do?
   }
 }

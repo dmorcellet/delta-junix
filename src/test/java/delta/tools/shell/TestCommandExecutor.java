@@ -11,6 +11,10 @@ import delta.tools.shell.commands.CatCommand;
 import delta.tools.shell.commands.SortCommand;
 import delta.tools.shell.streams.StreamsFactory;
 
+/**
+ * Test class for the command executor.
+ * @author DAM
+ */
 public class TestCommandExecutor extends TestCase
 {
   /**
@@ -21,6 +25,9 @@ public class TestCommandExecutor extends TestCase
     super("Command executor test");
   }
 
+  /**
+   * Test the 'cat' command.
+   */
   public void testCatCommand()
   {
     // Setup :
@@ -41,6 +48,9 @@ public class TestCommandExecutor extends TestCase
     inFile.delete();
   }
 
+  /**
+   * Test a pipe command.
+   */
   public void testPipeCommand()
   {
     // Setup :

@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import delta.common.utils.io.StreamTools;
 
 /**
+ * Shell command.
  * @author DAM
  */
 public class ShellCommand
@@ -30,6 +31,9 @@ public class ShellCommand
   /**
    * Constructor.
    * @param command Managed command.
+   * @param in Input.
+   * @param out Output.
+   * @param err Error output.
    */
   public ShellCommand(ShellCommandImpl command, InputStream in, OutputStream out, OutputStream err)
   {
@@ -39,16 +43,28 @@ public class ShellCommand
     _err=err;
   }
 
+  /**
+   * Redirect standard input to the given stream.
+   * @param is Stream to use.
+   */
   public void redirectStdin(InputStream is)
   {
     _in=is;
   }
 
+  /**
+   * Redirect standard output to the given stream.
+   * @param os Stream to use.
+   */
   public void redirectStdout(OutputStream os)
   {
     _out=os;
   }
 
+  /**
+   * Redirect standard error to the given stream.
+   * @param os Stream to use.
+   */
   public void redirectStderr(OutputStream os)
   {
     _err=os;

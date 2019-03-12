@@ -9,6 +9,10 @@ import org.apache.log4j.Logger;
 import delta.common.utils.io.StreamTools;
 import delta.tools.shell.utils.JUnixLoggers;
 
+/**
+ * Test piped streams.
+ * @author DAM
+ */
 public class TestPipeStreams extends TestCase
 {
   private static final Logger _logger=JUnixLoggers.getJUnixLogger();
@@ -30,6 +34,9 @@ public class TestPipeStreams extends TestCase
     super("Pipe streams test");
   }
 
+  /**
+   * Test a producer/consumer scenario.
+   */
   public void testPipeBuffer()
   {
     _buffer=new BuffersQueue(PIPE_SIZE);

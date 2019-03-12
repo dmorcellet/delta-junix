@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * Input stream used in a pipe.
  * @author DAM
  */
 public class PipeInputStream extends InputStream
@@ -28,6 +29,10 @@ public class PipeInputStream extends InputStream
    */
   private int _position;
 
+  /**
+   * Constructor.
+   * @param buffers Input buffers.
+   */
   public PipeInputStream(BuffersQueue buffers)
   {
     _buffersQueue=buffers;

@@ -6,6 +6,10 @@ import java.util.Random;
 import junit.framework.TestCase;
 import delta.common.utils.io.StreamTools;
 
+/**
+ * Test for the pipe output stream.
+ * @author DAM
+ */
 public class TestPipeOutputStream extends TestCase
 {
   /**
@@ -16,6 +20,9 @@ public class TestPipeOutputStream extends TestCase
     super("Pipe output stream test");
   }
 
+  /**
+   * Test the pipe output stream.
+   */
   public void testPipeOutputStream()
   {
     PipeOutputStream pos=null;
