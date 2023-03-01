@@ -9,15 +9,13 @@ import java.io.OutputStream;
 
 import org.apache.log4j.Logger;
 
-import delta.tools.shell.utils.JUnixLoggers;
-
 /**
  * Factory methods to build streams.
  * @author DAM
  */
 public class StreamsFactory
 {
-  private static final Logger _logger=JUnixLoggers.getJUnixLogger();
+  private static final Logger LOGGER=Logger.getLogger(StreamsFactory.class);
 
   /**
    * Build a file input stream.
@@ -33,7 +31,7 @@ public class StreamsFactory
     }
     catch(FileNotFoundException fnfE)
     {
-      _logger.error(fnfE);
+      LOGGER.error(fnfE);
     }
     return ret;
   }
@@ -62,7 +60,7 @@ public class StreamsFactory
     }
     catch(FileNotFoundException fnfE)
     {
-      _logger.error(fnfE);
+      LOGGER.error(fnfE);
     }
     return ret;
   }

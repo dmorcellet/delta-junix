@@ -2,12 +2,10 @@ package delta.tools.shell;
 
 import java.io.IOException;
 
-import junit.framework.TestCase;
-
 import org.apache.log4j.Logger;
 
 import delta.common.utils.io.StreamTools;
-import delta.tools.shell.utils.JUnixLoggers;
+import junit.framework.TestCase;
 
 /**
  * Test piped streams.
@@ -15,7 +13,7 @@ import delta.tools.shell.utils.JUnixLoggers;
  */
 public class TestPipeStreams extends TestCase
 {
-  private static final Logger _logger=JUnixLoggers.getJUnixLogger();
+  private static final Logger LOGGER=Logger.getLogger(TestPipeStreams.class);
 
   private Thread _producer;
   private Thread _consumer;
@@ -67,10 +65,10 @@ public class TestPipeStreams extends TestCase
           byte[] myBuffer=new byte[CONSUMER_BUFFER_SIZE];
           while(bytesRead<BYTES_TO_EXCHANGE)
           {
-            _logger.debug("Reading...");
+            LOGGER.debug("Reading...");
             int read=is.read(myBuffer,0,CONSUMER_BUFFER_SIZE);
             bytesRead+=read;
-            _logger.debug("Read "+read+" bytes...");
+            LOGGER.debug("Read "+read+" bytes...");
           }
         }
         catch(IOException ioe)
@@ -102,10 +100,10 @@ public class TestPipeStreams extends TestCase
           byte[] myBuffer=new byte[PRODUCER_BUFFER_SIZE];
           while(bytesWritten<BYTES_TO_EXCHANGE)
           {
-            _logger.debug("Writing...");
+            LOGGER.debug("Writing...");
             os.write(myBuffer,0,PRODUCER_BUFFER_SIZE);
             bytesWritten+=PRODUCER_BUFFER_SIZE;
-            _logger.debug("Wrote "+PRODUCER_BUFFER_SIZE+" bytes...");
+            LOGGER.debug("Wrote "+PRODUCER_BUFFER_SIZE+" bytes...");
           }
           os.close();
         }

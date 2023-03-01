@@ -4,15 +4,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import org.apache.log4j.Logger;
 
-import delta.tools.shell.utils.JUnixLoggers;
-
 /**
  * Queue of byte buffers.
  * @author DAM
  */
 public class BuffersQueue
 {
-  private static final Logger _logger=JUnixLoggers.getJUnixLogger();
+  private static final Logger LOGGER=Logger.getLogger(BuffersQueue.class);
 
   private static final int DEFAULT_BUFFER_SIZE=1024;
 
@@ -57,9 +55,9 @@ public class BuffersQueue
    */
   public void putBuffer(byte[] buffer, int offset, int length)
   {
-    if (_logger.isDebugEnabled())
+    if (LOGGER.isDebugEnabled())
     {
-      _logger.debug("Received buffer : offset="+offset+", lenght="+length);
+      LOGGER.debug("Received buffer : offset="+offset+", lenght="+length);
     }
     try
     {
@@ -70,7 +68,7 @@ public class BuffersQueue
     }
     catch(InterruptedException iException)
     {
-      _logger.error("",iException);
+      LOGGER.error("",iException);
     }
   }
 
@@ -97,7 +95,7 @@ public class BuffersQueue
     }
     catch(InterruptedException iException)
     {
-      _logger.error("",iException);
+      LOGGER.error("",iException);
     }
     return ret;
   }

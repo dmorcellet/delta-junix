@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 import delta.common.utils.io.StreamTools;
 import delta.tools.shell.CommandEnvironment;
 import delta.tools.shell.InternalCommand;
-import delta.tools.shell.utils.JUnixLoggers;
 
 /**
  * Implementation of the Unix sort command as a Java internal command.
@@ -24,7 +23,7 @@ import delta.tools.shell.utils.JUnixLoggers;
  */
 public class SortCommand extends InternalCommand
 {
-  private static final Logger _logger=JUnixLoggers.getJUnixLogger();
+  private static final Logger LOGGER=Logger.getLogger(SortCommand.class);
 
   /**
    * Execute the command.
@@ -74,9 +73,9 @@ public class SortCommand extends InternalCommand
       StreamTools.close(isr); isr=null;
       StreamTools.close(pw); pw=null;
     }
-    if (_logger.isInfoEnabled())
+    if (LOGGER.isInfoEnabled())
     {
-      _logger.info("Exit code="+exitCode);
+      LOGGER.info("Exit code="+exitCode);
     }
   }
 }

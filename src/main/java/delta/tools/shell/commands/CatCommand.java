@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 
 import delta.tools.shell.CommandEnvironment;
 import delta.tools.shell.InternalCommand;
-import delta.tools.shell.utils.JUnixLoggers;
 
 /**
  * Implementation of the Unix cat command as a Java internal command.
@@ -17,7 +16,7 @@ import delta.tools.shell.utils.JUnixLoggers;
 public class CatCommand extends InternalCommand
 {
   private static final int DEFAULT_BUFFER_SIZE=1024;
-  private static final Logger _logger=JUnixLoggers.getJUnixLogger();
+  private static final Logger LOGGER=Logger.getLogger(CatCommand.class);
 
   /**
    * Execute the command.
@@ -55,9 +54,9 @@ public class CatCommand extends InternalCommand
     {
       exitCode=-1;
     }
-    if (_logger.isInfoEnabled())
+    if (LOGGER.isInfoEnabled())
     {
-      _logger.info("Exit code="+exitCode);
+      LOGGER.info("Exit code="+exitCode);
     }
   }
 }
