@@ -2,7 +2,8 @@ package delta.tools.shell;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Queue of byte buffers.
@@ -10,7 +11,7 @@ import org.apache.log4j.Logger;
  */
 public class BuffersQueue
 {
-  private static final Logger LOGGER=Logger.getLogger(BuffersQueue.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(BuffersQueue.class);
 
   private static final int DEFAULT_BUFFER_SIZE=1024;
 

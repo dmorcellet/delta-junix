@@ -7,7 +7,8 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Factory methods to build streams.
@@ -15,7 +16,7 @@ import org.apache.log4j.Logger;
  */
 public class StreamsFactory
 {
-  private static final Logger LOGGER=Logger.getLogger(StreamsFactory.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(StreamsFactory.class);
 
   /**
    * Build a file input stream.
@@ -31,7 +32,7 @@ public class StreamsFactory
     }
     catch(FileNotFoundException fnfE)
     {
-      LOGGER.error(fnfE);
+      LOGGER.error("",fnfE);
     }
     return ret;
   }
@@ -60,7 +61,7 @@ public class StreamsFactory
     }
     catch(FileNotFoundException fnfE)
     {
-      LOGGER.error(fnfE);
+      LOGGER.error("",fnfE);
     }
     return ret;
   }

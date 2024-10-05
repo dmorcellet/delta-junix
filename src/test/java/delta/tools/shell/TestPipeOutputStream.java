@@ -3,27 +3,23 @@ package delta.tools.shell;
 import java.io.IOException;
 import java.util.Random;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import delta.common.utils.io.StreamTools;
 
 /**
  * Test for the pipe output stream.
  * @author DAM
  */
-public class TestPipeOutputStream extends TestCase
+@DisplayName("Pipe output stream test")
+class TestPipeOutputStream
 {
-  /**
-   * Constructor.
-   */
-  public TestPipeOutputStream()
-  {
-    super("Pipe output stream test");
-  }
-
   /**
    * Test the pipe output stream.
    */
-  public void testPipeOutputStream()
+  @Test
+  void testPipeOutputStream()
   {
     PipeOutputStream pos=null;
     try

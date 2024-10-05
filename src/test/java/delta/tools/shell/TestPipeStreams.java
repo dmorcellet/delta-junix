@@ -2,18 +2,21 @@ package delta.tools.shell;
 
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.StreamTools;
-import junit.framework.TestCase;
 
 /**
  * Test piped streams.
  * @author DAM
  */
-public class TestPipeStreams extends TestCase
+@DisplayName("Pipe streams test")
+class TestPipeStreams
 {
-  private static final Logger LOGGER=Logger.getLogger(TestPipeStreams.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TestPipeStreams.class);
 
   private Thread _producer;
   private Thread _consumer;
@@ -25,17 +28,10 @@ public class TestPipeStreams extends TestCase
   private static final int BYTES_TO_EXCHANGE=10000;
 
   /**
-   * Constructor.
-   */
-  public TestPipeStreams()
-  {
-    super("Pipe streams test");
-  }
-
-  /**
    * Test a producer/consumer scenario.
    */
-  public void testPipeBuffer()
+  @Test
+  void testPipeBuffer()
   {
     _buffer=new BuffersQueue(PIPE_SIZE);
     startConsumer();

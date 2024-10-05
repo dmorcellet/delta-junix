@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.tools.shell.CommandEnvironment;
 import delta.tools.shell.InternalCommand;
@@ -16,7 +17,7 @@ import delta.tools.shell.InternalCommand;
 public class CatCommand extends InternalCommand
 {
   private static final int DEFAULT_BUFFER_SIZE=1024;
-  private static final Logger LOGGER=Logger.getLogger(CatCommand.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(CatCommand.class);
 
   /**
    * Execute the command.

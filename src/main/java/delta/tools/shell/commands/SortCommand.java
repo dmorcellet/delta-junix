@@ -11,7 +11,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.StreamTools;
 import delta.tools.shell.CommandEnvironment;
@@ -23,7 +24,7 @@ import delta.tools.shell.InternalCommand;
  */
 public class SortCommand extends InternalCommand
 {
-  private static final Logger LOGGER=Logger.getLogger(SortCommand.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SortCommand.class);
 
   /**
    * Execute the command.

@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import delta.common.utils.environment.FileSystem;
 import delta.common.utils.files.TextFileWriter;
 import delta.tools.shell.commands.CatCommand;
@@ -15,20 +17,14 @@ import delta.tools.shell.streams.StreamsFactory;
  * Test class for the command executor.
  * @author DAM
  */
-public class TestCommandExecutor extends TestCase
+@DisplayName("Command executor test")
+class TestCommandExecutor
 {
-  /**
-   * Constructor.
-   */
-  public TestCommandExecutor()
-  {
-    super("Command executor test");
-  }
-
   /**
    * Test the 'cat' command.
    */
-  public void testCatCommand()
+  @Test
+  void testCatCommand()
   {
     // Setup :
     File inFile=getTestFile();
@@ -51,7 +47,8 @@ public class TestCommandExecutor extends TestCase
   /**
    * Test a pipe command.
    */
-  public void testPipeCommand()
+  @Test
+  void testPipeCommand()
   {
     // Setup :
     File inFile=getTestFile();
